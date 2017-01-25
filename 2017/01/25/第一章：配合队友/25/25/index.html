@@ -74,7 +74,7 @@
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="tags">TAGS</a>
+                        <a href="/+tags">TAGS</a>
                     </li>
 					
                     
@@ -210,13 +210,17 @@
                 </ul>
 
                 
-
-                
-                <!-- disqus 评论框 start -->
+                <!-- 多说评论框 start -->
                 <div class="comment">
-                    <div id="disqus_thread" class="disqus-thread"></div>
+                    <div class="ds-thread"
+                         data-thread-key="2017/01/25/第一章：配合队友/25/25/"
+                         data-title="（1）第一章：迎合你的队友"
+                         data-url="http://yoursite.com/2017/01/25/第一章：配合队友/25/25/">
+                    </div>
                 </div>
-                <!-- disqus 评论框 end -->
+                <!-- 多说评论框 end -->
+                
+
                 
 
             </div>
@@ -264,23 +268,25 @@
 </article>
 
 
-
-<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "Odaimoko";
-    var disqus_identifier = "http://yoursite.com/2017/01/25/第一章：配合队友/25/25/";
-    var disqus_url = "http://yoursite.com/2017/01/25/第一章：配合队友/25/25/";
+    // dynamic User by Hux
+    var _user = 'Odaimoko';
 
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user};
     (function () {
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
 </script>
-<!-- disqus 公共JS代码 end -->
+<!-- 多说公共JS代码 end -->
+
 
 
 
