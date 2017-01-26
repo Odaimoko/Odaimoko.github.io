@@ -1057,8 +1057,8 @@ img::-moz-selection {
 .container .toc-wrap .toc-level-2 > a {
     color: #404040;
     font-size: .9em;
-}.container .toc-wrap .toc-level-2 > a:hover {color: #66dcff;    font-size: .9em;}
-
+}
+.container .toc-wrap .toc-level-2 > a:hover {color: #66dcff;    font-size: .9em;}
 .container .toc-wrap li ol a {
     color: #555;
     font-size: .85em;
