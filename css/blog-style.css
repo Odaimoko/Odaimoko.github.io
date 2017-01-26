@@ -17,7 +17,7 @@ hr{
 }
 
 .sidebar-container h5 {
-    color: #808080;
+    color: #00BBFF;
 }
 
 .sidebar-container h5 a {
@@ -31,16 +31,16 @@ hr{
 
 .sidebar-container a:hover,
 .sidebar-container a:active {
-    color: #0085a1 !important;
+    color: #00D3FF !important; /*侧边栏订阅等按钮on色*/
 }
 
 .sidebar-container .tags a {
-    border-color: #bfbfbf;
+    border-color: #bfbfbf; /*tags按钮的边框 ，原 bfbfbf */
 }
 
 .sidebar-container .tags a:hover,
-.sidebar-container .tags a:active {
-    border-color: #0085a1;
+.sidebar-container .tags a:active { 
+    border-color: #0085A1; /*tags按钮的边框，移上去之后 */
 }
 
 .sidebar-container .short-about img {
@@ -60,7 +60,7 @@ hr{
     padding-left: 0;
 }
 
-body {
+body { /*就是body*/
     line-height: 1.7;
     font-size: 16px;
     color: #404040;
@@ -94,7 +94,7 @@ a {
 
 a:hover,
 a:focus {
-    color: #0085a1;
+    color: #66dcff; /*container 链接选中*/
 }
 
 a img:hover,
@@ -104,10 +104,10 @@ a img:focus {
 
 
 blockquote {
-    color: #808080;
+    color: #000000;
     font-size: 0.95em;
     margin: 20px 0 20px;
-    border-color: #ff7e79;
+    border-color: #66ccff;
 }
 
 blockquote p {
@@ -165,7 +165,7 @@ pre code {
 .post-container a {
     color: #337ab7;
 }
-
+.post-container a:hover {    color: #66dcff;}
 
 article .post-container h1,
 article .post-container h2,
@@ -281,7 +281,7 @@ article blockquote footer{
     left: 0;
     width: 100%;
     z-index: 6;
-    transition: background .5s;
+    transition: background .5s; /* nav-bar 的渐变出现时长 */
     line-height: 1.7;
 }
 
@@ -335,7 +335,7 @@ article blockquote footer{
 
     .navbar-custom .nav li a:hover,
     .navbar-custom .nav li a:focus {
-        color: #FC7097;
+        color: #66dcff;
     }
 
     .navbar-custom .nav li a:active {
@@ -349,24 +349,24 @@ article blockquote footer{
         -o-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
         backface-visibility: hidden;
-    }
+    } 
     .navbar-custom.is-fixed .nav li a,
     .navbar-custom.is-fixed .navbar-brand {
-        color: #404040;
+        color: #404040; /* 右上角选中字色 */
     }
 
     .navbar-custom.is-fixed .nav li a:hover,
     .navbar-custom.is-fixed .nav li a:focus,
     .navbar-custom.is-fixed .navbar-brand:hover,
     .navbar-custom.is-fixed .navbar-brand:focus {
-        color: #0085a1;
+        color: #66dcff; /* 右上角选中颜色 */
     }
 }
 
 .intro-header {
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #808080;
+    background-color: #66ccff;
     background-attachment: scroll;
     background-size: cover;
     height: 300px;
@@ -473,7 +473,7 @@ a:focus {
 }
 .post-preview > a > h2{transition: color .3s;}
 .post-preview:not(:first-of-type) > a:hover > h2{
-    color: #FC7097;
+    color: #66dcff;
 }
 
 .post-preview > a > .post-title {
@@ -612,7 +612,7 @@ footer .copyright a:focus {
 }
 
 .floating-label-form-group-with-focus label {
-    color: #0085a1;
+    color: #66dcff;
 }
 
 form .row:first-child .floating-label-form-group {
@@ -1055,9 +1055,9 @@ img::-moz-selection {
 }
 
 .container .toc-wrap .toc-level-2 > a {
-    color: #0085a1;
+    color: #404040;
     font-size: .9em;
-}
+}.container .toc-wrap .toc-level-2 > a:hover {color: #66dcff;    font-size: .9em;}
 
 .container .toc-wrap li ol a {
     color: #555;
@@ -1075,7 +1075,7 @@ img::-moz-selection {
     background-color: #fff;
 }
 
-.navbar-custom.is-fixed {
+.navbar-custom.is-fixed {opacity:0.7;
     /* when the user scrolls down, we hide the header right above the viewport */
     position: fixed;
     background-color: rgba(255, 255, 255, 0.98);
@@ -1086,10 +1086,10 @@ img::-moz-selection {
 .navbar-custom.is-fixed::before {
     content: ' ';
     display: block;
-    height: 2px;
+    height: 5px;
     position: absolute;
     width: 100%;
-    background: red;
+    background: #66ccff;
 }
 
 .navbar-custom.is-fixed .brand-logo {
@@ -1177,7 +1177,7 @@ img::-moz-selection {
     opacity: .9;
 }
 .site-heading h5 a{
-    color: #fff;
+    color: #f;
     font-size: 18px;
     letter-spacing: 1px;
     font-weight: 400;
