@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://odaimoko.github.io/"/>
-  <updated>2017-05-13T12:39:26.885Z</updated>
+  <updated>2017-05-14T13:43:32.821Z</updated>
   <id>https://odaimoko.github.io/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>一日一言</title>
-    <link href="https://odaimoko.github.io/2017/05/07/%E4%B8%80%E6%97%A5%E4%B8%80%E8%A8%80/"/>
-    <id>https://odaimoko.github.io/2017/05/07/一日一言/</id>
-    <published>2017-05-07T13:43:36.000Z</published>
-    <updated>2017-05-13T12:39:26.885Z</updated>
+    <link href="https://odaimoko.github.io/2017/05/14/%E4%B8%80%E6%97%A5%E4%B8%80%E8%A8%80/"/>
+    <id>https://odaimoko.github.io/2017/05/14/一日一言/</id>
+    <published>2017-05-14T13:43:31.000Z</published>
+    <updated>2017-05-14T13:43:32.821Z</updated>
     
     <content type="html"><![CDATA[<p>与时间一起。</p>
 <h2 id="2017-03-08"><a href="#2017-03-08" class="headerlink" title="2017-03-08"></a>2017-03-08</h2><p>《狼的孩子雨和雪》里的细节描写太到位了。印象最深的是花刚搬到新房子，清扫房间的时候，抚着窗花、洗碗槽，感受上一个住在这儿的人的气息，看着画面的我也体会到了花作为女性的细。正所谓通过描写环境的细节表现人物的心，而不是台词或者人物的细节。<br>完全没料到雨和雪最终道路的转换，但其中的逻辑倒也很在理。雪的开朗让她倾向与人共乐，雨的不合群导致他性格偏独；最终二人分别走向与幼时不同的两个极端。雨的狼性在捕鸟时觉醒，是不是也说明生命中选择支的一个小小不同，能够造成结局大变。如果生理没有缺陷的话，对人影响更大的还是后天环境吧——但是后天环境是通过选择支达成的，和先天因素又有关系吗？</p>
@@ -74,6 +74,17 @@
 <p><img src="http://okbdclil3.bkt.clouddn.com/Nikki2017-05-13%202.jpg" alt="二"></p>
 <p>“有时我们不播放音乐，或者只播放很低音量的音乐，让你知道出于怎样的战况。是该继续潜行，还是开始战斗。听到脚步声，或者门背后的呼吸声，都会给你相当程度的紧张感。”</p>
 <p>UI设计的思路：让玩家呆在菜单界面的事件尽可能短。【那么就应该权衡下能够设置的内容？】</p>
+<h2 id="2017-05-14"><a href="#2017-05-14" class="headerlink" title="2017-05-14"></a>2017-05-14</h2><p>现在是神海4的幕后访谈。</p>
+<p>总体没什么太多不同，大家都是坚持着顽皮狗的细节风格。“即便只是飞跃而过，也必须真实可信”。人物建模的表情非常到位，“过场动画里的面部表情，我看一眼就知道角色在想什么”，毕竟比THE LAST OF US 的动作捕捉还多了面部捕捉。</p>
+<p>和场景产生互动：不只是“按下某个键出发某剧情/拿到道具/开门”，还有行走的时候周围环境的反应，例如泥巴、水、叶子、玻璃、光影。</p>
+<p>神海4的开发不是按照顺序，而是按照“一块一块开发 from part to part”？ </p>
+<p>突然想到的，现在所有游戏都是针对<strong>屏幕正面</strong>的玩家，那么必须要在屏幕侧面才能体会到的视觉把戏，有没有存在的必要？</p>
+<h3 id="角色美术方面"><a href="#角色美术方面" class="headerlink" title="角色美术方面"></a>角色美术方面</h3><p>服装设计师Ashley Swidowski：“服装设计师要做的就是让角色的服装不让玩家分心，要不然设计就失败了。”</p>
+<p>“为现代角色设计服装，往往比古装电影的服装设计里更为复杂。古装电影里的服饰是考究的重现，观众往往更容易接受不熟悉的服装。” ——Jeffrey Kurland, Costume designer</p>
+<p>任何Nate身上的东西，都应该简洁，不会抢了头部模型、演员表情和场景氛围的风头。图。</p>
+<p><img src="http://okbdclil3.bkt.clouddn.com/Nikki2017-05-14%20%20%281%29.jpg" alt="1"></p>
+<p>角色美术师Colin Thomas：有一张参考目录，列举了在哪种场景下角色衣服应该是什么样子，然后他们（Colin们）就会按照表里的内容制作。经常会考虑衣服的褶皱，原画里也表现了褶皱，角色美术考虑更多细节，例如弯曲手臂的时候，伸直之后又会怎么样。游戏的细节得益于更小的贴图支持（来自Frank Tzeng），从而让游戏本身和过场动画的质量细节品质一致。3D软件用的是maya。虽然远处看不出，但是镜头靠近放大就看得出来。</p>
+<p>首席角色美术师Frank Tzeng：主要负责Nate的面部，表情，皱纹（也就是，脸，和手臂，和Colin一起管理皮肤。同衣物一样，握拳时候的关节变化，手腕皮肤的变化等细节也会体现。使用Zbrush雕刻纹理。图。<img src="http://okbdclil3.bkt.clouddn.com/Nikki2017-05-14%20%20%282%29.jpg" alt="2">居然还有汗毛。 </p>
 ]]></content>
     
     <summary type="html">
@@ -119,9 +130,9 @@
       <category term="Football" scheme="https://odaimoko.github.io/categories/Football/"/>
     
     
-      <category term="复盘" scheme="https://odaimoko.github.io/tags/%E5%A4%8D%E7%9B%98/"/>
-    
       <category term="Football" scheme="https://odaimoko.github.io/tags/Football/"/>
+    
+      <category term="复盘" scheme="https://odaimoko.github.io/tags/%E5%A4%8D%E7%9B%98/"/>
     
   </entry>
   
@@ -205,9 +216,9 @@
       <category term="Football" scheme="https://odaimoko.github.io/categories/Football/"/>
     
     
-      <category term="复盘" scheme="https://odaimoko.github.io/tags/%E5%A4%8D%E7%9B%98/"/>
-    
       <category term="Football" scheme="https://odaimoko.github.io/tags/Football/"/>
+    
+      <category term="复盘" scheme="https://odaimoko.github.io/tags/%E5%A4%8D%E7%9B%98/"/>
     
   </entry>
   
@@ -251,9 +262,9 @@
       <category term="Football" scheme="https://odaimoko.github.io/categories/Football/"/>
     
     
-      <category term="复盘" scheme="https://odaimoko.github.io/tags/%E5%A4%8D%E7%9B%98/"/>
-    
       <category term="Football" scheme="https://odaimoko.github.io/tags/Football/"/>
+    
+      <category term="复盘" scheme="https://odaimoko.github.io/tags/%E5%A4%8D%E7%9B%98/"/>
     
   </entry>
   
