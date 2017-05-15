@@ -183,16 +183,32 @@
 <p>如果你看到了，想问我某个函数做什么，我很荣幸。联系方式吗–&gt;&gt;最下面有我的邮箱。btw欢迎到百度吉里吉里吧做客。</p>
 <p>补充学习资料：</p>
 <ul>
-<li><a href="http://kcddp.keyfc.net/bbs/viewthread.php?tid=301" target="_blank" rel="external">karryngai大神对tjs语言的研究</a><ul>
+<li><p><a href="http://kcddp.keyfc.net/bbs/viewthread.php?tid=301" target="_blank" rel="external">karryngai大神对tjs语言的研究</a></p>
+<ul>
 <li>这个前面的地址部分是对的。“内部类的实现”部分往后就要小心点读，不全对。</li>
 </ul>
 </li>
-<li><a href="http://kcddp.keyfc.net/bbs/viewthread.php?tid=857" target="_blank" rel="external">karryngai大神的krkr本体学习笔记+system文件夹里的tjs文件鼓捣</a></li>
-<li><a href="https://www.keakon.net/2008/10/06/KAG%E6%BA%90%E7%A0%81%E5%AF%BC%E8%AF%BB" target="_blank" rel="external">keakon的system文件夹里tjs文件导读</a></li>
-<li><a href="http://tjs2.info/" target="_blank" rel="external">日站，讲解得很详细</a><ul>
+<li><p><a href="http://kcddp.keyfc.net/bbs/viewthread.php?tid=857" target="_blank" rel="external">karryngai大神的krkr本体学习笔记+system文件夹里的tjs文件鼓捣</a></p>
+</li>
+<li><p><a href="https://www.keakon.net/2008/10/06/KAG%E6%BA%90%E7%A0%81%E5%AF%BC%E8%AF%BB" target="_blank" rel="external">keakon的system文件夹里tjs文件导读</a></p>
+</li>
+<li><p><a href="http://tjs2.info/" target="_blank" rel="external">日站，讲解得很详细</a></p>
+<ul>
 <li>基本是从0开始讲tjs2，然后按顺序是：本地class（封装在krkr.exe里的），KAGPlugin，SystemButton，clickable map，选择支，Draggable layer【可拖动的层】，Layer类的方法，历史记录，游戏内下载。</li>
 <li>全是用tjs实现而不是kag，如果读完这些，一个相当有料的养成游戏，甚至rpg游戏就可以做出来了。</li>
+<li>游戏内下载可以做：游戏内购，补丁升级等等。</li>
 </ul>
+</li>
+<li><p><a href="http://kibitz2550.blogspot.com/" target="_blank" rel="external">NOCBOL ~本店營業中~</a>。</p>
+<ul>
+<li>很详尽的基础教学，水螅的看完了可以看这个。</li>
+</ul>
+</li>
+<li><p><a href="https://sv.kikyou.info/trac/kirikiri/browser/kirikiri2?order=name" target="_blank" rel="external">吉里主站的svn</a>。里面各种krkr的历史文件和插件等等。</p>
+<ul>
+<li><a href="https://sv.kikyou.info/trac/kirikiri/browser/kirikiri2/trunk/kirikiri2/src/plugins/win32" target="_blank" rel="external">dll插件的源码</a></li>
+</ul>
+<p>​</p>
 </li>
 </ul>
 <p>我做的一些范例：</p>
@@ -220,8 +236,8 @@
 <p><code>getHandlers</code>函数在MainWindow里面只用了<code>tagHandlers = getHandlers();</code>一次，也只有用这一次的必要。<code>getHandlers</code>函数开头是</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getHandlers</span>(<span class="params"></span>)</span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">return</span> %[ <span class="comment">// 辞書配列オブジェクト</span></div></pre></td></tr></table></figure>
 <p>也就是说，这个函数的唯一目的是返回一个<a href="http://devdoc.kikyou.info/tvp/docs/tjs2doc/contents/dictionary.html" target="_blank" rel="external">tjs字典</a>，接下来看这个字典对象的元素是啥：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">每个字典元素的格式如下：</div><div class="line"></div><div class="line">  函数的名字 : function(elm)</div><div class="line">  &#123;</div><div class="line">  // 函数内容</div><div class="line">  &#125; incontextof this,</div><div class="line"></div><div class="line">不用「函数的名字  : 」，而是「&quot;函数的名字&quot; =&gt; 」也没问题。</div><div class="line">incontextof this 是为了能让函数在本类（MainWindow类）的对象的</div><div class="line">上下文中正确的运行而必要的。</div><div class="line">incontextof this は、関数が正しく このクラスの</div><div class="line">オブジェクトのコンテキスト上で動くようにするために必要。</div><div class="line">*/</div></pre></td></tr></table></figure>
-<p>先别管什么上下文之类的，总之这就是一个ks里的的tag如何导致图像啊文字啊等等的显示、隐藏、渐变操作的实质地点。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">每个字典元素的格式如下：</div><div class="line"></div><div class="line">  函数的名字 : function(elm)</div><div class="line">  &#123;</div><div class="line">  // 函数内容</div><div class="line">  &#125; incontextof this,</div><div class="line"></div><div class="line">不用「函数的名字  : 」，而是「&quot;函数的名字&quot; =&gt; 」也没问题。</div><div class="line">incontextof this 是为了能让函数在本类（MainWindow类）的对象的</div><div class="line">上下文中正确的运行而必要的。</div><div class="line">incontextof this は、関数が正しく このクラスの</div><div class="line">オブジェクトのコンテキスト上で動くようにするために必要。</div></pre></td></tr></table></figure>
+<p>先别管什么上下文之类的是啥，总之这就是一个ks里的的tag如何导致图像啊文字啊等等的显示、隐藏、渐变操作的实质地点。</p>
 <p>例子最棒了！举个简单易懂的</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">nowait : <span class="function"><span class="keyword">function</span>(<span class="params">elm</span>)</span></div><div class="line">&#123;</div><div class="line">	<span class="comment">// 一時的にノーウェイトで実行</span></div><div class="line">	enterNoWait();</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125; incontextof <span class="keyword">this</span>,</div><div class="line">     </div><div class="line">     <span class="attr">endnowait</span> : <span class="function"><span class="keyword">function</span>(<span class="params">elm</span>)</span></div><div class="line">&#123;</div><div class="line">	<span class="comment">// nowait の解除</span></div><div class="line">	leaveNoWait();</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125; incontextof <span class="keyword">this</span>,</div></pre></td></tr></table></figure>
 <table>
@@ -247,7 +263,12 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">hh : <span class="function"><span class="keyword">function</span>(<span class="params">elm</span>)</span></div><div class="line">&#123;</div><div class="line">	dm(elm.t); <span class="comment">// dm是Debug.message函数的缩写，这个函数的作用是在控制台中打印后面的信息</span></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 不return 个什么东西的话会报错（默认返回void）。</span></div><div class="line">&#125; incontextof <span class="keyword">this</span>,</div></pre></td></tr></table></figure>
 <p>在first.ks里写 <code>@hh t=&quot;ddsssawd2&quot;</code>。运行krkr，按Shift+F4打开控制台：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">15:41:43 first.ks : @hh t=&quot;ddsssawd2&quot;</div><div class="line">15:41:43 ddsssawd2</div></pre></td></tr></table></figure>
-<p>锵锵！因为tag之后的<code>storage=jj.png</code>一类的会被解析成字典形式，所以传入函数的<code>elm</code>对象就是一个带有这些参数的字典。于是你就可以用<code>kag.tagHandlers.image(%[storage:&quot;config&quot;,layer:&quot;0&quot;,page:&quot;fore&quot;,visible:true]);</code>来执行kag语句了。</p>
+<p>锵锵！因为tag之后的<code>storage=jj.png</code>一类的会被解析成字典形式，所以传入函数的<code>elm</code>对象就是一个带有这些参数的字典。于是你就可以用</p>
+<p><code>kag.tagHandlers.image(%[storage:&quot;config&quot;,layer:&quot;0&quot;,page:&quot;fore&quot;,visible:true]);</code></p>
+<p>来执行kag语句了。</p>
+<p>为了方便管理自定义命令，建议新开一个ks或者tjs文件，在里面这样写</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">kag.tagHandlers.hh = <span class="function"><span class="keyword">function</span>(<span class="params">elm</span>)</span></div><div class="line">	&#123;</div><div class="line">		dm(elm.t); <span class="comment">// dm是Debug.message函数的缩写，这个函数的作用是在控制台中打印后面的信息</span></div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 不return 个什么东西的话会报错（默认返回void）。</span></div><div class="line">	&#125; incontextof kag;</div></pre></td></tr></table></figure>
+<p>注意这里是类的外部，所以必须要incontextof 具体的实例，我们具体的MainWindow实例当然就是kag啦。</p>
 <h2 id="存读相关"><a href="#存读相关" class="headerlink" title="存读相关"></a>存读相关</h2><h3 id="插件的存读"><a href="#插件的存读" class="headerlink" title="插件的存读"></a>插件的存读</h3><h4 id="存储全局变量时"><a href="#存储全局变量时" class="headerlink" title="存储全局变量时"></a>存储全局变量时</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">saveSystemVariables</span>(<span class="params"></span>)</span></div><div class="line">	&#123;</div><div class="line">		<span class="comment">// システム変数の保存</span></div><div class="line">		<span class="keyword">if</span>(!isMain) <span class="keyword">return</span>;</div><div class="line"></div><div class="line">		<span class="comment">// プラグインを呼ぶ</span></div><div class="line">		forEachEventHook(<span class="string">'onSaveSystemVariables'</span>,</div><div class="line">			<span class="function"><span class="keyword">function</span>(<span class="params">handler, f</span>) </span>&#123; handler(); &#125; incontextof <span class="keyword">this</span>);</div><div class="line"></div><div class="line">		…</div></pre></td></tr></table></figure>
 <p>这里说明，在保存系统变量之前，会先调用所有插件的onSaveSystemVariables函数。插件的详细内容在Plugin.tjs里面，很简单。</p>
 <h4 id="存储f，也就是存档变量时"><a href="#存储f，也就是存档变量时" class="headerlink" title="存储f，也就是存档变量时"></a>存储f，也就是存档变量时</h4><p>internalStoreFlags函数里。</p>
