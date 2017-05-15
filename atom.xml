@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://odaimoko.github.io/"/>
-  <updated>2017-05-14T15:57:37.573Z</updated>
+  <updated>2017-05-15T08:07:26.893Z</updated>
   <id>https://odaimoko.github.io/</id>
   
   <author>
@@ -20,14 +20,81 @@
     <link href="https://odaimoko.github.io/2017/05/14/%E5%90%89%E9%87%8C%E5%90%89%E9%87%8CMainWindow-tjs%E6%B8%90%E8%BF%9B%E4%B8%AD%E2%80%A6%E2%80%A6/"/>
     <id>https://odaimoko.github.io/2017/05/14/吉里吉里MainWindow-tjs渐进中……/</id>
     <published>2017-05-14T15:41:06.000Z</published>
-    <updated>2017-05-14T15:57:37.573Z</updated>
+    <updated>2017-05-15T08:07:26.893Z</updated>
     
     <content type="html"><![CDATA[<h1 id="为什么写这个"><a href="#为什么写这个" class="headerlink" title="为什么写这个"></a>为什么写这个</h1><p>学习记录+指点迷津。</p>
 <h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>由于主要是学习记录，只有我看到哪里，读过之后，才会记录在这里。</p>
 <p>如果你看到了，想问我某个函数做什么，我很荣幸。联系方式吗–&gt;&gt;最下面有我的邮箱。btw欢迎到百度吉里吉里吧做客。</p>
-<h1 id="开始吧"><a href="#开始吧" class="headerlink" title="开始吧"></a>开始吧</h1><h2 id="存读相关"><a href="#存读相关" class="headerlink" title="存读相关"></a>存读相关</h2><h3 id="插件的存读"><a href="#插件的存读" class="headerlink" title="插件的存读"></a>插件的存读</h3><h4 id="存储全局变量时"><a href="#存储全局变量时" class="headerlink" title="存储全局变量时"></a>存储全局变量时</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">saveSystemVariables</span>(<span class="params"></span>)</span></div><div class="line">	&#123;</div><div class="line">		<span class="comment">// システム変数の保存</span></div><div class="line">		<span class="keyword">if</span>(!isMain) <span class="keyword">return</span>;</div><div class="line"></div><div class="line">		<span class="comment">// プラグインを呼ぶ</span></div><div class="line">		forEachEventHook(<span class="string">'onSaveSystemVariables'</span>,</div><div class="line">			<span class="function"><span class="keyword">function</span>(<span class="params">handler, f</span>) </span>&#123; handler(); &#125; incontextof <span class="keyword">this</span>);</div><div class="line"></div><div class="line">		…</div></pre></td></tr></table></figure>
+<p>补充学习资料：</p>
+<ul>
+<li><a href="http://kcddp.keyfc.net/bbs/viewthread.php?tid=301" target="_blank" rel="external">karryngai大神对tjs语言的研究</a><ul>
+<li>这个前面的地址部分是对的。“内部类的实现”部分往后就要小心点读，不全对。</li>
+</ul>
+</li>
+<li><a href="http://kcddp.keyfc.net/bbs/viewthread.php?tid=857" target="_blank" rel="external">karryngai大神的krkr本体学习笔记+system文件夹里的tjs文件鼓捣</a></li>
+<li><a href="https://www.keakon.net/2008/10/06/KAG%E6%BA%90%E7%A0%81%E5%AF%BC%E8%AF%BB" target="_blank" rel="external">keakon的system文件夹里tjs文件导读</a></li>
+<li><a href="http://tjs2.info/" target="_blank" rel="external">日站，讲解得很详细</a><ul>
+<li>基本是从0开始讲tjs2，然后按顺序是：本地class（封装在krkr.exe里的），KAGPlugin，SystemButton，clickable map，选择支，Draggable layer【可拖动的层】，Layer类的方法，历史记录，游戏内下载。</li>
+<li>全是用tjs实现而不是kag，如果读完这些，一个相当有料的养成游戏，甚至rpg游戏就可以做出来了。</li>
+</ul>
+</li>
+</ul>
+<p>我做的一些范例：</p>
+<ul>
+<li><a href="http://pan.baidu.com/s/1gds8ujD" target="_blank" rel="external">吉里吉里音乐连续播放</a></li>
+<li><a href="http://pan.baidu.com/s/1pJBIHpp" target="_blank" rel="external">语音回放（漂亮）</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=3684223566&amp;uk=2064198080" target="_blank" rel="external">小田的吉里吉里滚动条教程</a></li>
+</ul>
+<p>我做的游戏：</p>
+<ul>
+<li><a href="http://pan.baidu.com/s/1mgw11tY" target="_blank" rel="external">HSCN：High Sky, Cold Night</a><ul>
+<li>仿逆转裁判，操作略微有点不友好，通过威慑就可以跳出询问。剧本自认为还可以。</li>
+</ul>
+</li>
+</ul>
+<h1 id="开始吧"><a href="#开始吧" class="headerlink" title="开始吧"></a>开始吧</h1><p>使用的是KAGeXpress3。KCDDP有下载。打开krkr，按Ctrl+F12，吉里吉里[Kirikiri] 2 执行内核 version 2.30.2.420-zhcn ( TJS version 2.4.27 )。</p>
+<h2 id="tagHandlers"><a href="#tagHandlers" class="headerlink" title="tagHandlers"></a>tagHandlers</h2><p>有一段这样</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mainConductor; <span class="comment">// メインのコンダクタ</span></div><div class="line"><span class="keyword">var</span> extraConductor; <span class="comment">// 予備のコンダクタ</span></div><div class="line"><span class="keyword">var</span> conductor; <span class="comment">// 現在のコンダクタ		</span></div><div class="line">...</div><div class="line">   <span class="comment">// タグハンドラ/コンダクタを作成</span></div><div class="line">   tagHandlers = getHandlers();</div><div class="line">   mainConductor = <span class="keyword">new</span> Conductor(<span class="keyword">this</span>, tagHandlers);</div><div class="line">   add(mainConductor);</div><div class="line">   conductor = mainConductor;</div><div class="line">   extraConductor = <span class="keyword">new</span> Conductor(<span class="keyword">this</span>, tagHandlers);</div><div class="line">   add(extraConductor);</div></pre></td></tr></table></figure>
+<p>我们一般不都是写的ks文件吗，ks文件里面的东西怎么解读的呢？对ks文件的解读就用的就是一个叫<a href="http://devdoc.kikyou.info/tvp/docs/kr2doc/contents/f_KAGParser.html" target="_blank" rel="external">KAGParser</a>的类，这个类是封在krkr.exe里面的，KAG自己在Conductor.tjs里面继承了它，加强了功能。继承树长这样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">KAGParser</div><div class="line">	|---BaseConductor</div><div class="line">		|---Conductor</div></pre></td></tr></table></figure>
+<p>这里mainConductor和extraConductor都是Conductor的实例。大家可能看到过这样的错误，就是这儿来的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">messagelayer.tjs(1561)[(function) addButton] &lt;-- mainwindow.tjs(4463)[(function expression) (anonymous)] &lt;-- conductor.tjs(427)[(function) onTag] &lt;-- conductor.tjs(95)[(function) timerCallback]</div></pre></td></tr></table></figure>
+<p>也就是说，conductor一家子，就是用来处理ks文件的对象。</p>
+<h3 id="为什么可以用kag-tagHandlers-image-之类的命令"><a href="#为什么可以用kag-tagHandlers-image-之类的命令" class="headerlink" title="为什么可以用kag.tagHandlers.image(%[])之类的命令"></a>为什么可以用kag.tagHandlers.image(%[])之类的命令</h3><p>最上面的那儿有一句<code>tagHandlers = getHandlers();</code>，那么就来看看getHandlers长啥样吧。</p>
+<p><code>getHandlers</code>函数在MainWindow里面只用了<code>tagHandlers = getHandlers();</code>一次，也只有用这一次的必要。<code>getHandlers</code>函数开头是</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getHandlers</span>(<span class="params"></span>)</span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">return</span> %[ <span class="comment">// 辞書配列オブジェクト</span></div></pre></td></tr></table></figure>
+<p>也就是说，这个函数的唯一目的是返回一个<a href="http://devdoc.kikyou.info/tvp/docs/tjs2doc/contents/dictionary.html" target="_blank" rel="external">tjs字典</a>，接下来看这个字典对象的元素是啥：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">每个字典元素的格式如下：</div><div class="line"></div><div class="line">  函数的名字 : function(elm)</div><div class="line">  &#123;</div><div class="line">  // 函数内容</div><div class="line">  &#125; incontextof this,</div><div class="line"></div><div class="line">不用「函数的名字  : 」，而是「&quot;函数的名字&quot; =&gt; 」也没问题。</div><div class="line">incontextof this 是为了能让函数在本类（MainWindow类）的对象的</div><div class="line">上下文中正确的运行而必要的。</div><div class="line">incontextof this は、関数が正しく このクラスの</div><div class="line">オブジェクトのコンテキスト上で動くようにするために必要。</div><div class="line">*/</div></pre></td></tr></table></figure>
+<p>先别管什么上下文之类的，总之这就是一个ks里的的tag如何导致图像啊文字啊等等的显示、隐藏、渐变操作的实质地点。</p>
+<p>例子最棒了！举个简单易懂的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">nowait : <span class="function"><span class="keyword">function</span>(<span class="params">elm</span>)</span></div><div class="line">&#123;</div><div class="line">	<span class="comment">// 一時的にノーウェイトで実行</span></div><div class="line">	enterNoWait();</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125; incontextof <span class="keyword">this</span>,</div><div class="line">     </div><div class="line">     <span class="attr">endnowait</span> : <span class="function"><span class="keyword">function</span>(<span class="params">elm</span>)</span></div><div class="line">&#123;</div><div class="line">	<span class="comment">// nowait の解除</span></div><div class="line">	leaveNoWait();</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125; incontextof <span class="keyword">this</span>,</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>函数体</th>
+<th>函数名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nowait</td>
+<td>enterNoWait(); return 0;</td>
+</tr>
+<tr>
+<td>endnowait</td>
+<td>leaveNoWait(); return 0;</td>
+</tr>
+</tbody>
+</table>
+<p>你在ks里写一个<code>@nowait</code>，所做的相当于<code>@eval exp=&quot;enterNoWait()&quot;</code>。</p>
+<p>自定义tag也可以在这里实现，当然也可以写macro，但是macro里面不让<code>iscript</code>，不能执行大片的tjs式子呢（其实可以把一大片写成一个函数，然后macro里面eval这个函数；或者在某个label（*开头的那玩意）下面写iscript，写完之后endscript和return，在macro里call这个label等等）。还是来个例子。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">hh : <span class="function"><span class="keyword">function</span>(<span class="params">elm</span>)</span></div><div class="line">&#123;</div><div class="line">	dm(elm.t); <span class="comment">// dm是Debug.message函数的缩写，这个函数的作用是在控制台中打印后面的信息</span></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 不return 个什么东西的话会报错（默认返回void）。</span></div><div class="line">&#125; incontextof <span class="keyword">this</span>,</div></pre></td></tr></table></figure>
+<p>在first.ks里写 <code>@hh t=&quot;ddsssawd2&quot;</code>。运行krkr，按Shift+F4打开控制台：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">15:41:43 first.ks : @hh t=&quot;ddsssawd2&quot;</div><div class="line">15:41:43 ddsssawd2</div></pre></td></tr></table></figure>
+<p>锵锵！因为tag之后的<code>storage=jj.png</code>一类的会被解析成字典形式，所以传入函数的<code>elm</code>对象就是一个带有这些参数的字典。于是你就可以用<code>kag.tagHandlers.image(%[storage:&quot;config&quot;,layer:&quot;0&quot;,page:&quot;fore&quot;,visible:true]);</code>来执行kag语句了。</p>
+<h2 id="存读相关"><a href="#存读相关" class="headerlink" title="存读相关"></a>存读相关</h2><h3 id="插件的存读"><a href="#插件的存读" class="headerlink" title="插件的存读"></a>插件的存读</h3><h4 id="存储全局变量时"><a href="#存储全局变量时" class="headerlink" title="存储全局变量时"></a>存储全局变量时</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">saveSystemVariables</span>(<span class="params"></span>)</span></div><div class="line">	&#123;</div><div class="line">		<span class="comment">// システム変数の保存</span></div><div class="line">		<span class="keyword">if</span>(!isMain) <span class="keyword">return</span>;</div><div class="line"></div><div class="line">		<span class="comment">// プラグインを呼ぶ</span></div><div class="line">		forEachEventHook(<span class="string">'onSaveSystemVariables'</span>,</div><div class="line">			<span class="function"><span class="keyword">function</span>(<span class="params">handler, f</span>) </span>&#123; handler(); &#125; incontextof <span class="keyword">this</span>);</div><div class="line"></div><div class="line">		…</div></pre></td></tr></table></figure>
 <p>这里说明，在保存系统变量之前，会先调用所有插件的onSaveSystemVariables函数。插件的详细内容在Plugin.tjs里面，很简单。</p>
-<h4 id="internalStoreFlags里"><a href="#internalStoreFlags里" class="headerlink" title="internalStoreFlags里"></a>internalStoreFlags里</h4><p>存储f，也就是存档变量。</p>
+<h4 id="存储f，也就是存档变量时"><a href="#存储f，也就是存档变量时" class="headerlink" title="存储f，也就是存档变量时"></a>存储f，也就是存档变量时</h4><p>internalStoreFlags函数里。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">   <span class="function"><span class="keyword">function</span> <span class="title">internalStoreFlags</span>(<span class="params">f</span>)</span>&#123;</div><div class="line">   	...</div><div class="line">       f.prevEmptyLine = prevEmptyLine;</div><div class="line">       </div><div class="line">	<span class="comment">// storeHook</span></div><div class="line">	forEachEventHook(<span class="string">'onStore'</span>,</div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">handler, f</span>) </span>&#123; handler(f.flags, f.options); &#125; incontextof <span class="keyword">this</span>,</div><div class="line">		%[flags:f, <span class="attr">options</span>:<span class="keyword">void</span>]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>和存储全局变量时不同，插件在存储存档变量的时候是在最后调用。 </p>
 ]]></content>
