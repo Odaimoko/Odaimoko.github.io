@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://odaimoko.github.io/"/>
-  <updated>2017-05-15T15:55:06.889Z</updated>
+  <updated>2017-05-16T12:27:36.130Z</updated>
   <id>https://odaimoko.github.io/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="https://odaimoko.github.io/2017/05/14/%E5%90%89%E9%87%8C%E5%90%89%E9%87%8CMainWindow-tjs%E6%B8%90%E8%BF%9B%E4%B8%AD%E2%80%A6%E2%80%A6/"/>
     <id>https://odaimoko.github.io/2017/05/14/吉里吉里MainWindow-tjs渐进中……/</id>
     <published>2017-05-14T15:41:06.000Z</published>
-    <updated>2017-05-15T15:55:06.889Z</updated>
+    <updated>2017-05-16T12:27:36.130Z</updated>
     
     <content type="html"><![CDATA[<h1 id="为什么写这个"><a href="#为什么写这个" class="headerlink" title="为什么写这个"></a>为什么写这个</h1><p>学习记录+指点迷津。</p>
 <h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>由于主要是学习记录，只有我看到哪里，读过之后，才会记录在这里。</p>
-<p>如果你看到了，想问我某个函数做什么，我很荣幸。联系方式吗–&gt;&gt;最下面有我的邮箱。btw欢迎到百度吉里吉里吧做客。</p>
+<p>如果你看到了，想问我某个函数做什么，我很荣幸。联系方式吗–&gt;&gt;最下面有我的邮箱。btw欢迎到百度吉里吉里吧做客哦哦。</p>
 <p>补充学习资料：</p>
 <ul>
 <li><p><a href="http://kcddp.keyfc.net/bbs/viewthread.php?tid=301" target="_blank" rel="external">karryngai大神对tjs语言的研究</a></p>
@@ -63,10 +63,12 @@
 </ul>
 <p>我做的游戏：</p>
 <ul>
-<li><a href="http://pan.baidu.com/s/1mgw11tY" target="_blank" rel="external">HSCN：High Sky, Cold Night</a><ul>
+<li><a href="http://pan.baidu.com/s/1mgw11tY" target="_blank" rel="external">HSCN：High Sky, Cold Night</a>。免费。<ul>
 <li>仿逆转裁判，操作略微有点不友好，通过威慑就可以跳出询问。剧本自认为还可以。</li>
 </ul>
 </li>
+<li><a href="http://www.dreamoryavg.com/games/mob/" target="_blank" rel="external">回忆忘却之匣</a>。通贩+steam。</li>
+<li><a href="http://the9thday.net/works/w1/" target="_blank" rel="external">第九日 - the 9th day -</a>。通贩+steam。steam版本是unity做的。</li>
 </ul>
 <h1 id="开始吧"><a href="#开始吧" class="headerlink" title="开始吧"></a>开始吧</h1><p>使用的是KAGeXpress3。KCDDP有下载。打开krkr，按Ctrl+F12，吉里吉里[Kirikiri] 2 执行内核 version 2.30.2.420-zhcn ( TJS version 2.4.27 )。</p>
 <h2 id="tagHandlers"><a href="#tagHandlers" class="headerlink" title="tagHandlers"></a>tagHandlers</h2><p>有一段这样</p>
