@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://odaimoko.github.io/"/>
-  <updated>2017-05-16T12:27:36.130Z</updated>
+  <updated>2017-05-16T12:33:18.373Z</updated>
   <id>https://odaimoko.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://odaimoko.github.io/2017/05/14/%E5%90%89%E9%87%8C%E5%90%89%E9%87%8CMainWindow-tjs%E6%B8%90%E8%BF%9B%E4%B8%AD%E2%80%A6%E2%80%A6/"/>
     <id>https://odaimoko.github.io/2017/05/14/吉里吉里MainWindow-tjs渐进中……/</id>
     <published>2017-05-14T15:41:06.000Z</published>
-    <updated>2017-05-16T12:27:36.130Z</updated>
+    <updated>2017-05-16T12:33:18.373Z</updated>
     
     <content type="html"><![CDATA[<h1 id="为什么写这个"><a href="#为什么写这个" class="headerlink" title="为什么写这个"></a>为什么写这个</h1><p>学习记录+指点迷津。</p>
 <h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>由于主要是学习记录，只有我看到哪里，读过之后，才会记录在这里。</p>
@@ -120,6 +120,9 @@
 <h4 id="存储f，也就是存档变量时"><a href="#存储f，也就是存档变量时" class="headerlink" title="存储f，也就是存档变量时"></a>存储f，也就是存档变量时</h4><p>internalStoreFlags函数里。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">   <span class="function"><span class="keyword">function</span> <span class="title">internalStoreFlags</span>(<span class="params">f</span>)</span>&#123;</div><div class="line">   	...</div><div class="line">       f.prevEmptyLine = prevEmptyLine;</div><div class="line">       </div><div class="line">	<span class="comment">// storeHook</span></div><div class="line">	forEachEventHook(<span class="string">'onStore'</span>,</div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">handler, f</span>) </span>&#123; handler(f.flags, f.options); &#125; incontextof <span class="keyword">this</span>,</div><div class="line">		%[flags:f, <span class="attr">options</span>:<span class="keyword">void</span>]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>和存储全局变量时不同，插件在存储存档变量的时候是在最后调用。 </p>
+<p>另外提示一句，就这一个函数来看，如果你想用存档变量保存些啥东西，就别和这里面的名字冲突了。比如</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">f.lastSaveDataName = lastSaveDataName;</div><div class="line">f.quaking = quaking;</div><div class="line">f.quakePhase = quakePhase;</div><div class="line">f.historyWriteEnabled = historyWriteEnabled;</div><div class="line">f.historyEnabled = historyEnabled;</div><div class="line">f.currentNum = currentNum;</div><div class="line">f.currentPage = currentPage;</div><div class="line">f.currentWithBack = currentWithBack;</div><div class="line">f.chUserMode = chUserMode;</div><div class="line">f.chSpeed = chSpeed;</div><div class="line">...</div></pre></td></tr></table></figure>
+<p>不过这些都是系统（kag）相关的名字，想冲突也只有你自己想写系统的时候才会吧。</p>
 ]]></content>
     
     <summary type="html">
