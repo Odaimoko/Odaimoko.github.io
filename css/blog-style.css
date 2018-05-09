@@ -174,8 +174,18 @@ article .post-container h4,
 article .post-container h5,
 article .post-container h6 {
     margin-top:-90px;
+    color: #65cfdd;
+    text-align: end;
+    /* float: right; */
     padding: 100px 0 0;
 }
+article .post-container ul {
+    list-style: circle;
+    /* background: #00D3FF */
+}
+/* article .post-container li::before {
+    content: "-;;-";
+} */
 
 article blockquote footer{
     padding: 5px 20px 0;
@@ -226,7 +236,7 @@ article blockquote footer{
 .post-container li h4,
 .post-container li h5,
 .post-container li h6 {
-    line-height: 2;
+    line-height: 23;
     margin-top: 20px;
 }
 
