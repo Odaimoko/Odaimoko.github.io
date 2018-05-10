@@ -1050,29 +1050,38 @@ img::-moz-selection {
     margin-top: 30px;
     list-style: none;
     color: darkgrey;
-    border-left: #eee 3px solid;
+    border-left: #eee 10px solid;
     padding-left: 12px;
 }
 
 .container .toc-wrap > ol {
     list-style: none;
+
     padding-left: 0;
 }
 
 .container .toc-wrap li > ol {
-    padding-left: 8px;
+    padding-left: 20px;
     list-style: none;
 }
 
 .container .toc-wrap .toc-level-2 > a {
     color: #404040;
-    font-size: .9em;
+    font-size: 1.2em;
 }
-.container .toc-wrap .toc-level-2 > a:hover {color: #66dcff;    font-size: .9em;}
+.container .toc-wrap .toc-level-2 > a:hover {
+    color: #66dcff;    
+    font-size: 1.2em;
+}
+
 .container .toc-wrap li ol a {
     color: #555;
-    font-size: .85em;
+    font-size: .9em;
     padding-left: 5px;
+}
+.container .toc-wrap li ol a:hover {
+    color: #66dcff; 
+    font-size: .9em;
 }
 
 .container .toc-wrap.toc-fixed {
