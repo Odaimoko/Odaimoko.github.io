@@ -106,7 +106,7 @@ a img:focus {
 blockquote {
     color: #000000;
     font-size: 0.95em;
-    margin: 20px 0 20px;
+    margin: 10px 0 10px;
     border-color: #66ccff;
 }
 
@@ -181,11 +181,15 @@ article .post-container h6 {
 }
 article .post-container ul {
     list-style: circle;
-    /* background: #00D3FF */
+
 }
-/* article .post-container li::before {
-    content: "-;;-";
-} */
+article .post-container ul ul {
+    list-style: none;
+}
+
+article .post-container ul ul li::before {
+    content: "-   ";
+}
 
 article blockquote footer{
     padding: 5px 20px 0;
