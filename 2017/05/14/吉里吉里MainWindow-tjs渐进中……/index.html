@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content>
-    <meta name="keyword" content>
+    <meta name="description" content="null">
+    <meta name="keyword" content="undefined">
     <meta name="theme-color" content="#600090">
     <meta name="msapplication-navbutton-color" content="#600090">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -38,7 +38,7 @@
 <style>
 
     header.intro-header {
-        background-image: url('')
+        background-image: url('null')
     }
 </style>
 <!-- hack iOS CSS :active style -->
@@ -199,7 +199,7 @@
 <li>游戏内下载可以做：游戏内购，补丁升级等等。</li>
 </ul>
 </li>
-<li><p><a href="http://kibitz2550.blogspot.com/" target="_blank" rel="noopener">NOCBOL <del>本店營業中</del></a>。</p>
+<li><p><a href="http://kibitz2550.blogspot.com/" target="_blank" rel="noopener">NOCBOL ~本店營業中~</a>。</p>
 <ul>
 <li>很详尽的基础教学，水螅的看完了可以看这个。</li>
 </ul>
@@ -215,7 +215,7 @@
 <ul>
 <li><a href="http://pan.baidu.com/s/1gds8ujD" target="_blank" rel="noopener">吉里吉里音乐连续播放</a></li>
 <li><a href="http://pan.baidu.com/s/1pJBIHpp" target="_blank" rel="noopener">语音回放（漂亮）</a></li>
-<li><a href="http://pan.baidu.com/share/link?shareid=3684223566&uk=2064198080" target="_blank" rel="noopener">小田的吉里吉里滚动条教程</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=3684223566&amp;uk=2064198080" target="_blank" rel="noopener">小田的吉里吉里滚动条教程</a></li>
 </ul>
 <p>我做的游戏：</p>
 <ul>
@@ -229,25 +229,19 @@
 <h1 id="开始吧"><a href="#开始吧" class="headerlink" title="开始吧"></a>开始吧</h1><p>使用的是KAGeXpress3。KCDDP有下载。打开krkr，按Ctrl+F12，吉里吉里[Kirikiri] 2 执行内核 version 2.30.2.420-zhcn ( TJS version 2.4.27 )。</p>
 <h2 id="tagHandlers"><a href="#tagHandlers" class="headerlink" title="tagHandlers"></a>tagHandlers</h2><p>有一段这样</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mainConductor; <span class="comment">// メインのコンダクタ</span></span><br><span class="line"><span class="keyword">var</span> extraConductor; <span class="comment">// 予備のコンダクタ</span></span><br><span class="line"><span class="keyword">var</span> conductor; <span class="comment">// 現在のコンダクタ		</span></span><br><span class="line">...</span><br><span class="line">   <span class="comment">// タグハンドラ/コンダクタを作成</span></span><br><span class="line">   tagHandlers = getHandlers();</span><br><span class="line">   mainConductor = <span class="keyword">new</span> Conductor(<span class="keyword">this</span>, tagHandlers);</span><br><span class="line">   add(mainConductor);</span><br><span class="line">   conductor = mainConductor;</span><br><span class="line">   extraConductor = <span class="keyword">new</span> Conductor(<span class="keyword">this</span>, tagHandlers);</span><br><span class="line">   add(extraConductor);</span><br></pre></td></tr></table></figure>
-
 <p>我们一般不都是写的ks文件吗，ks文件里面的东西怎么解读的呢？对ks文件的解读就用的就是一个叫<a href="http://devdoc.kikyou.info/tvp/docs/kr2doc/contents/f_KAGParser.html" target="_blank" rel="noopener">KAGParser</a>的类，这个类是封在krkr.exe里面的，KAG自己在Conductor.tjs里面继承了它，加强了功能。继承树长这样</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">KAGParser</span><br><span class="line">	|---BaseConductor</span><br><span class="line">		|---Conductor</span><br></pre></td></tr></table></figure>
-
 <p>这里mainConductor和extraConductor都是Conductor的实例。大家可能看到过这样的错误，就是这儿来的。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">messagelayer.tjs(1561)[(function) addButton] &lt;-- mainwindow.tjs(4463)[(function expression) (anonymous)] &lt;-- conductor.tjs(427)[(function) onTag] &lt;-- conductor.tjs(95)[(function) timerCallback]</span><br></pre></td></tr></table></figure>
-
 <p>也就是说，conductor一家子，就是用来处理ks文件的对象。</p>
 <h3 id="为什么可以用kag-tagHandlers-image-之类的命令"><a href="#为什么可以用kag-tagHandlers-image-之类的命令" class="headerlink" title="为什么可以用kag.tagHandlers.image(%[])之类的命令"></a>为什么可以用kag.tagHandlers.image(%[])之类的命令</h3><p>最上面的那儿有一句<code>tagHandlers = getHandlers();</code>，那么就来看看getHandlers长啥样吧。</p>
 <p><code>getHandlers</code>函数在MainWindow里面只用了<code>tagHandlers = getHandlers();</code>一次，也只有用这一次的必要。<code>getHandlers</code>函数开头是</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getHandlers</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> %[ <span class="comment">// 辞書配列オブジェクト</span></span><br></pre></td></tr></table></figure>
-
 <p>也就是说，这个函数的唯一目的是返回一个<a href="http://devdoc.kikyou.info/tvp/docs/tjs2doc/contents/dictionary.html" target="_blank" rel="noopener">tjs字典</a>，接下来看这个字典对象的元素是啥：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">每个字典元素的格式如下：</span><br><span class="line"></span><br><span class="line">  函数的名字 : function(elm)</span><br><span class="line">  &#123;</span><br><span class="line">  // 函数内容</span><br><span class="line">  &#125; incontextof this,</span><br><span class="line"></span><br><span class="line">不用「函数的名字  : 」，而是「&quot;函数的名字&quot; =&gt; 」也没问题。</span><br><span class="line">incontextof this 是为了能让函数在本类（MainWindow类）的对象的</span><br><span class="line">上下文中正确的运行而必要的。</span><br><span class="line">incontextof this は、関数が正しく このクラスの</span><br><span class="line">オブジェクトのコンテキスト上で動くようにするために必要。</span><br></pre></td></tr></table></figure>
-
 <p>先别管什么上下文之类的是啥，总之这就是一个ks里的的tag如何导致图像啊文字啊等等的显示、隐藏、渐变操作的实质地点。</p>
 <p>例子最棒了！举个简单易懂的</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">nowait : <span class="function"><span class="keyword">function</span>(<span class="params">elm</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 一時的にノーウェイトで実行</span></span><br><span class="line">	enterNoWait();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; incontextof <span class="keyword">this</span>,</span><br><span class="line">     </span><br><span class="line">     endnowait : <span class="function"><span class="keyword">function</span>(<span class="params">elm</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// nowait の解除</span></span><br><span class="line">	leaveNoWait();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; incontextof <span class="keyword">this</span>,</span><br></pre></td></tr></table></figure>
-
 <table>
 <thead>
 <tr>
@@ -255,7 +249,8 @@
 <th>函数名</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>nowait</td>
 <td>enterNoWait(); return 0;</td>
 </tr>
@@ -263,31 +258,26 @@
 <td>endnowait</td>
 <td>leaveNoWait(); return 0;</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>你在ks里写一个<code>@nowait</code>，所做的相当于<code>@eval exp=&quot;enterNoWait()&quot;</code>。</p>
 <p>自定义tag也可以在这里实现，当然也可以写macro，但是macro里面不让<code>iscript</code>，不能执行大片的tjs式子呢（其实可以把一大片写成一个函数，然后macro里面eval这个函数；或者在某个label（*开头的那玩意）下面写iscript，写完之后endscript和return，在macro里call这个label等等）。还是来个例子。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">hh : <span class="function"><span class="keyword">function</span>(<span class="params">elm</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	dm(elm.t); <span class="comment">// dm是Debug.message函数的缩写，这个函数的作用是在控制台中打印后面的信息</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 不return 个什么东西的话会报错（默认返回void）。</span></span><br><span class="line">&#125; incontextof <span class="keyword">this</span>,</span><br></pre></td></tr></table></figure>
-
 <p>在first.ks里写 <code>@hh t=&quot;ddsssawd2&quot;</code>。运行krkr，按Shift+F4打开控制台：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">15:41:43 first.ks : @hh t=&quot;ddsssawd2&quot;</span><br><span class="line">15:41:43 ddsssawd2</span><br></pre></td></tr></table></figure>
-
 <p>锵锵！因为tag之后的<code>storage=jj.png</code>一类的会被解析成字典形式，所以传入函数的<code>elm</code>对象就是一个带有这些参数的字典。于是你就可以用</p>
 <p><code>kag.tagHandlers.image(%[storage:&quot;config&quot;,layer:&quot;0&quot;,page:&quot;fore&quot;,visible:true]);</code></p>
 <p>来执行kag语句了。</p>
 <p>为了方便管理自定义命令，建议新开一个ks或者tjs文件，在里面这样写</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">kag.tagHandlers.hh = <span class="function"><span class="keyword">function</span>(<span class="params">elm</span>)</span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		dm(elm.t); <span class="comment">// dm是Debug.message函数的缩写，这个函数的作用是在控制台中打印后面的信息</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 不return 个什么东西的话会报错（默认返回void）。</span></span><br><span class="line">	&#125; incontextof kag;</span><br></pre></td></tr></table></figure>
-
 <p>注意这里是类的外部，所以必须要incontextof 具体的实例，我们具体的MainWindow实例当然就是kag啦。</p>
 <h2 id="存读相关"><a href="#存读相关" class="headerlink" title="存读相关"></a>存读相关</h2><h3 id="插件的存读"><a href="#插件的存读" class="headerlink" title="插件的存读"></a>插件的存读</h3><h4 id="存储全局变量时"><a href="#存储全局变量时" class="headerlink" title="存储全局变量时"></a>存储全局变量时</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">saveSystemVariables</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="comment">// システム変数の保存</span></span><br><span class="line">		<span class="keyword">if</span>(!isMain) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// プラグインを呼ぶ</span></span><br><span class="line">		forEachEventHook(<span class="string">'onSaveSystemVariables'</span>,</span><br><span class="line">			<span class="function"><span class="keyword">function</span>(<span class="params">handler, f</span>) </span>&#123; handler(); &#125; incontextof <span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">		…</span><br></pre></td></tr></table></figure>
-
 <p>这里说明，在保存系统变量之前，会先调用所有插件的onSaveSystemVariables函数。插件的详细内容在Plugin.tjs里面，很简单。</p>
 <h4 id="存储f，也就是存档变量时"><a href="#存储f，也就是存档变量时" class="headerlink" title="存储f，也就是存档变量时"></a>存储f，也就是存档变量时</h4><p>internalStoreFlags函数里。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">internalStoreFlags</span>(<span class="params">f</span>)</span>&#123;</span><br><span class="line">   	...</span><br><span class="line">       f.prevEmptyLine = prevEmptyLine;</span><br><span class="line">       </span><br><span class="line">	<span class="comment">// storeHook</span></span><br><span class="line">	forEachEventHook(<span class="string">'onStore'</span>,</span><br><span class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">handler, f</span>) </span>&#123; handler(f.flags, f.options); &#125; incontextof <span class="keyword">this</span>,</span><br><span class="line">		%[flags:f, <span class="attr">options</span>:<span class="keyword">void</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>和存储全局变量时不同，插件在存储存档变量的时候是在最后调用。 </p>
 <p>另外提示一句，就这一个函数来看，如果你想用存档变量保存些啥东西，就别和这里面的名字冲突了。比如</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">f.lastSaveDataName = lastSaveDataName;</span><br><span class="line">f.quaking = quaking;</span><br><span class="line">f.quakePhase = quakePhase;</span><br><span class="line">f.historyWriteEnabled = historyWriteEnabled;</span><br><span class="line">f.historyEnabled = historyEnabled;</span><br><span class="line">f.currentNum = currentNum;</span><br><span class="line">f.currentPage = currentPage;</span><br><span class="line">f.currentWithBack = currentWithBack;</span><br><span class="line">f.chUserMode = chUserMode;</span><br><span class="line">f.chSpeed = chSpeed;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
 <p>不过这些都是系统（kag）相关的名字，想冲突也只有你自己想写系统的时候才会吧。</p>
 
                 <hr>
@@ -407,7 +397,7 @@
 
                 
                     <li>
-                        <a target="_blank" href="http://weibo.com/odaimoko">
+                        <a target="_blank" href="http://weibo.com/7655661723">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
@@ -430,15 +420,6 @@
                 
 
                 
-                    <li>
-                        <a target="_blank"  href="https://www.linkedin.com/in/兴田-张-67b08914b">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                
 				
 										
 				
@@ -454,7 +435,7 @@
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Little Field 2019
+                    Copyright &copy; Little Field 2023
                     <br>
                     <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
                     <br>
@@ -523,7 +504,7 @@
   e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
   })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-  _st('install','','2.0.0');
+  _st('install','undefined','2.0.0');
 </script>
 
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
